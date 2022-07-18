@@ -23,11 +23,11 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     async Task Add()
     {
-        if(string.IsNullOrWhiteSpace(Text))
+        if (string.IsNullOrWhiteSpace(Text))
         {
             return;
         }
-        if(connectivity.NetworkAccess != NetworkAccess.Internet)
+        if (connectivity.NetworkAccess != NetworkAccess.Internet)
         {
             await Shell.Current.DisplayAlert("Oh, oh!", "No internet", "OK");
             return;
@@ -39,20 +39,25 @@ public partial class MainViewModel : ObservableObject
     }
     async Task Refresh()
     {
-        Items.Clear();
+        //Items.Clear();
         var tasks = await TodoMAUI.Services.TodoService.GetTask();
-        foreach(var i in tasks)
+        foreach (var i in tasks)
         {
-            Items.Add(i.Title.ToString());
+            if (!Items.Contains(i.Title.ToString()))
+            {
+                Items.Add(i.Title.ToString());
+            }
         }
     }
 
     [RelayCommand]
-    void Delete(string s)
+    async Task Delete(string s)
     {
-        if(Items.Contains(s))
+        if (Items.Contains(s))
         {
             Items.Remove(s);
+            //Items.
+            await TodoMAUI.Services.TodoService.RemoveTask(5);
         }
     }
 
