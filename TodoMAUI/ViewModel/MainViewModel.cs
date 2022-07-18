@@ -31,6 +31,7 @@ public partial class MainViewModel : ObservableObject
             await Shell.Current.DisplayAlert("Oh, oh!", "No internet", "OK");
             return;
         }
+        TodoMAUI.Services.TodoService.AddTask(Text, Text, 1, false);
         Items.Add(Text);
         Text = string.Empty;
     }
