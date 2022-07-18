@@ -9,26 +9,23 @@ namespace TodoMAUI.Services
         public static async Task Init()
         {
             //if db exists, do not create a new one
-            if(db!=null)
+            if (db != null)
             {
                 return;
             }
             //path to db
-            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "app.db");
+            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "app.db3");
             db = new SQLiteAsyncConnection(databasePath);
             db.CreateTableAsync<Todos>();
         }
 
-        public static async Task AddTask(string title, string description, byte priority, bool isDone)
+        public static async Task AddTask(string title, string description, int priority, bool isDone)
         {
             await Init();
             //creates a new object and stores it in the db
             var todo = new Todos
             {
                 Title = title,
-                Description = description,
-                Priority = priority,
-                IsDone = isDone
             };
             var id = await db.InsertAsync(todo);
         }

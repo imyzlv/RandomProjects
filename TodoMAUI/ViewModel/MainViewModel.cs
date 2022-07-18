@@ -12,6 +12,7 @@ public partial class MainViewModel : ObservableObject
     {
         Items = new ObservableCollection<string>();
         this.connectivity = connectivity;
+        Refresh();
     }
     [ObservableProperty]
     ObservableCollection<string> items;
@@ -31,9 +32,19 @@ public partial class MainViewModel : ObservableObject
             await Shell.Current.DisplayAlert("Oh, oh!", "No internet", "OK");
             return;
         }
-        TodoMAUI.Services.TodoService.AddTask(Text, Text, 1, false);
-        Items.Add(Text);
+        await TodoMAUI.Services.TodoService.AddTask(Text, Text, 1, false);
+        //Items.Add(Text);
+        await Refresh();
         Text = string.Empty;
+    }
+    async Task Refresh()
+    {
+        Items.Clear();
+        var tasks = await TodoMAUI.Services.TodoService.GetTask();
+        foreach(var i in tasks)
+        {
+            Items.Add(i.Title.ToString());
+        }
     }
 
     [RelayCommand]
