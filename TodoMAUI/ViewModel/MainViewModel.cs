@@ -57,7 +57,7 @@ public partial class MainViewModel : ObservableObject
         {
             Items.Remove(s);
             //Items.
-            await TodoMAUI.Services.TodoService.RemoveTask(5);
+            await TodoMAUI.Services.TodoService.RemoveTask(s);
         }
     }
 

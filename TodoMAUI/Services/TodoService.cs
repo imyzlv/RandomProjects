@@ -30,11 +30,11 @@ namespace TodoMAUI.Services
             var id = await db.InsertAsync(todo);
         }
 
-        public static async Task RemoveTask(int id)
+        public static async Task RemoveTask(string title)
         {
             await Init();
             //deletes entry based on the primary key - id
-            await db.DeleteAsync<Todos>(id);
+            await db.DeleteAsync<Todos>(title);
         }
 
         public static async Task<IEnumerable<Todos>> GetTask()
