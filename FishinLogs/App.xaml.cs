@@ -1,4 +1,6 @@
-﻿namespace FishinLogs;
+﻿using FishinLogs.View;
+
+namespace FishinLogs;
 
 public partial class App : Application
 {
@@ -6,7 +8,8 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		//MainPage = new AppShell();
+		//MainPage = new HomePage();
 	}
 }
 

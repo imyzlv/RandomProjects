@@ -43,6 +43,32 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiIcon Include="Resources\Images\fish1.svg" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="ViewModel\" />
+	  <None Remove="View\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="ViewModel\" />
+	  <Folder Include="View\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="View\HomePage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="View\RecordsPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="View\StatisticsPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="View\SettingsPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\fish1.svg" />
+	</ItemGroup>
 </Project>
