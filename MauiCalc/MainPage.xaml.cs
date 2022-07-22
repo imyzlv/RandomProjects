@@ -25,7 +25,7 @@ public partial class MainPage : ContentPage
     {
 		Button button = (Button)sender;
 		string btnText = button.Text;
-		if (result.Text == "0" || operationalState)
+		if (result.Text == "0")
 		{
 			result.Text = btnText;
 		}

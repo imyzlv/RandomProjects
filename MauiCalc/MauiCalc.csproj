@@ -47,8 +47,14 @@
 
 	<ItemGroup>
 	  <None Remove="Service\" />
+	  <None Remove="ViewModel\" />
+	  <None Remove="CommunityToolkit.Mvvm" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Service\" />
+	  <Folder Include="ViewModel\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
 	</ItemGroup>
 </Project>
