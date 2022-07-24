@@ -2,28 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FishinLogs.View.RecordsPage"
-             Title="List fish">
+             Title="Catches">
 
 
-        <Grid ColumnDefinitions="100, 20, *, 110"
-              RowDefinitions="100,20">
-            <Image Source="fish_svgrepo_com"
-                   Grid.Column="0"/>
-            <Label Text="Asaris"
+    <Grid ColumnDefinitions="100, 20, *, 110"
+              RowDefinitions="100,20, 20"
+              Padding="5">
+        <Frame BackgroundColor="Transparent"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               Grid.Row="0"
+               Grid.RowSpan="3"/>
+
+        <Image Source="fish_svgrepo_com"
+                   Grid.Column="0"
+                   Grid.RowSpan="3"
+                   WidthRequest="80"/>
+
+        <Label Text="Asaris"
                FontSize="50"
                Grid.Column="2"
-               Grid.ColumnSpan="2"
-               BackgroundColor="Orange"/>
+               Grid.ColumnSpan="2"/>
 
-            <Label Text="Length: 100cm"
+        <Label Text="Length: 100cm"
                    Grid.Column="2"
                    Grid.ColumnSpan="2"
-                   Grid.Row="1"
-                   BackgroundColor="Red"/>
-        <Label Text="Weight: 5kg"
+                   Grid.Row="1"/>
+
+        <Label Text="Weight: 6kg"
                Grid.Column="3"
                Grid.Row="1"/>
-        </Grid>
+
+        <Label Text="22.07.2022"
+               Grid.Column="2"
+               Grid.Row="2"
+               Grid.ColumnSpan="2"/>
+
+    </Grid>
 
 
 </ContentPage>

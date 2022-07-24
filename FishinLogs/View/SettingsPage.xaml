@@ -3,10 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FishinLogs.View.SettingsPage"
              Title="Settings">
-    <StackLayout>
-        <Label Text="Welcome to settings"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-    </StackLayout>
+    
+    <Grid RowDefinitions="70, 10, 30, 40,  Auto"
+          Padding="20"
+          ColumnDefinitions="100, *, Auto"
+          RowSpacing="5"
+          ColumnSpacing="5">
+
+        <Line Stroke="black"
+              X2="600"
+              Grid.Row="1"
+              Grid.ColumnSpan="4"/>
+
+        <Label Text="Units"
+               FontSize="46"
+               Grid.ColumnSpan="3"
+               FontAttributes="Bold"/>
+
+        <Label Text="Metric"
+               FontSize="20"
+               Grid.Row="2"
+               Grid.Column="0"/>
+
+        <Switch Grid.Column="2"
+                Grid.Row="2"
+                OnColor="Orange"/>
+
+        <Label Text="Imperial"
+               FontSize="20"
+               Grid.Row="3"
+               Grid.Column="0"/>
+
+        <Switch Grid.Column="2"
+                Grid.Row="3"
+                OnColor="Orange"/>
+    </Grid>
 </ContentPage>
 

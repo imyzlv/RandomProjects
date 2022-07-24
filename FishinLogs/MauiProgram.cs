@@ -1,4 +1,7 @@
-﻿namespace FishinLogs;
+﻿using FishinLogs.View;
+using FishinLogs.ViewModel;
+
+namespace FishinLogs;
 
 public static class MauiProgram
 {
@@ -13,6 +16,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		builder.Services.AddSingleton<HomePage>();
+		builder.Services.AddSingleton<HomeViewModel>();
 		return builder.Build();
 	}
 }

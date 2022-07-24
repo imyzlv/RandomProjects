@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FishinLogs.View.HomePage"
-             Title="Add fish">
+             Title="Add catch"
+             xmlns:viewmodel="clr-namespace:FishinLogs.ViewModel"
+             x:DataType="viewmodel:HomeViewModel">
 
     <Grid RowDefinitions="100, *"
           ColumnDefinitions=".70*, .20*"
@@ -22,30 +24,36 @@
               RowSpacing="7">
                     <Entry Placeholder="Species"
                    Grid.Row="0"
-                   FontSize="20"/>
+                   FontSize="20"
+                   Text="{Binding Species}"/>
 
                     <Entry Placeholder="Length"
                    Grid.Row="1"
                    FontSize="20"
-                    Keyboard="Numeric" />
+                    Keyboard="Numeric"
+                    Text="{Binding Length}"/>
 
                     <Entry Placeholder="Weight"
                    Grid.Row="2"
                    FontSize="20"
-                   Keyboard="Numeric"/>
+                   Keyboard="Numeric"
+                   Text="{Binding Weight}"/>
 
                     <Entry Placeholder="Lure"
                    Grid.Row="3"
-                   FontSize="20"/>
+                   FontSize="20"
+                   Text="{Binding Lure}"/>
 
                     <Entry Placeholder="Fishing method"
                    Grid.Row="4"
-                   FontSize="20"/>
+                   FontSize="20"
+                   Text="{Binding FishingMethod}"/>
 
                     <Entry Placeholder="Comment"
                    Grid.Row="5"
                    FontSize="20"
-                   VerticalTextAlignment="Start"/>
+                   VerticalTextAlignment="Start"
+                   Text="{Binding Comment}"/>
 
                     <Button Text="Add photo"
                             Grid.Row="7"
@@ -57,7 +65,8 @@
                             Grid.Row="8"
                             Grid.ColumnSpan="2"
                             Padding="10"
-                            FontSize="20"/>
+                            FontSize="20"
+                            Command="{Binding AddRecordCommand}"/>
                 </Grid>
             </StackLayout>
         </ScrollView>
