@@ -19,6 +19,7 @@ namespace FishinLogs.Services
         }
         /// <summary>
         /// Adds a record about the catch to the database.
+        /// 
         /// </summary>
         /// <returns></returns>
         public static async Task AddCatch(string species, double length, double weight, string lure, string fishingMethod, string picture, string comment)
