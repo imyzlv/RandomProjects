@@ -9,7 +9,8 @@ namespace FishinLogs.ViewModel
     {
         public RecordViewModel()
         {
-            fishes.ItemSource = Services.CatchService.GetCatch();
+            var fishes = new List<Catch>();
+            //fishes
             //Fish = new ObservableCollection<IEnumerable<Catch>>();
             //Fish.Add(Services.CatchService.GetCatch());
         }
