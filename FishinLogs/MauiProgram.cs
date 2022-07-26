@@ -18,6 +18,9 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<HomePage>();
 		builder.Services.AddSingleton<HomeViewModel>();
+
+		builder.Services.AddSingleton<RecordsPage>();
+		builder.Services.AddSingleton<RecordViewModel>();
 		return builder.Build();
 	}
 }

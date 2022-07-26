@@ -44,9 +44,11 @@ namespace FishinLogs.Services
 
         }
 
-        public static async Task GetCatch()
+        public static async Task<IEnumerable<Catch>> GetCatch()
         {
-
+            await Init();
+            var fish = await db.Table<Catch>().ToListAsync();
+            return fish;
         }
     }
 }
