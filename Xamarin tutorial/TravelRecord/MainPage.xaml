@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelRecord.MainPage">
+
+    
+    <StackLayout VerticalOptions="Center"
+                 Margin="20"
+                 Spacing="10">
+
+        <Entry x:Name="emailEntry"
+            Placeholder="Email address"
+               Keyboard="Email"
+               TextColor="{StaticResource blueColor}"/>
+
+        <Entry x:Name="passwordEntry"
+            Placeholder="Password"
+               IsPassword="True"
+               TextColor="{StaticResource blueColor}"/>
+
+        <Button x:Name="LoginButton"
+                Text="Log in"
+                Clicked="LoginButton_Clicked"
+                Margin="0,50,0,0"
+                Style="{StaticResource loginButton}"/>
+
+    </StackLayout>
+
+</ContentPage>
+

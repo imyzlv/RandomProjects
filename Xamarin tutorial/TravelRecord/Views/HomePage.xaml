@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelRecord.Views.HomePage"
+             xmlns:local="clr-namespace:TravelRecord.Views"
+             Title="Home Page">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Clicked="ToolbarItem_Clicked"/>
+    </TabbedPage.ToolbarItems>
+
+    <local:HistoryPage Title="History"/>
+
+    <local:MapPage Title="Map"/>
+
+    <local:ProfilePage Title="Profile"/>
+
+</TabbedPage>
+
