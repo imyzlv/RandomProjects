@@ -9,8 +9,8 @@
 
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <Entry Placeholder="Write your experience"
-               x:Name="experienceEntry"/>
+        <Entry x:Name="experienceEntry"
+               Placeholder="Write your experience"/>
     </StackLayout>
 </ContentPage>
 

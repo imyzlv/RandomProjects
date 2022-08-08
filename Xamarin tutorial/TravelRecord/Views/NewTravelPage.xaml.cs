@@ -4,6 +4,7 @@ namespace TravelRecord.Views;
 
 public partial class NewTravelPage : ContentPage
 {
+
 	public NewTravelPage()
 	{
 		InitializeComponent();

@@ -13,5 +13,6 @@ public partial class HistoryPage : ContentPage
     {
         base.OnAppearing();
         var posts = await DbService.GetExperience();
+        postListView.ItemsSource = posts;
     }
 }
